@@ -1,5 +1,8 @@
 import argparse
 from pathlib import Path
+import hashlib 
+import json
+import datetime
 
 # Create Parser
 parser = argparse.ArgumentParser()
@@ -93,3 +96,28 @@ if args.list:
                 valid_files.append(line)
             else:
                 invalid_files.append(line)
+
+# Hash creation function 
+
+def create_hash(target): 
+    object = hashlib.sha256()
+    buffer_size = 65536
+    with open(target, "rb") as file:
+        while True:
+            content = file.read(buffer_size)
+            if not content:
+                break
+            object.update(content)
+    return object.hexdigest
+
+# JSON file to store hashes 
+hashfile = "hashes.json"
+
+# JSON write function 
+def write_to_json(entry, hashfile):
+    with open(hashfile, "r+") as file:
+        data = json.load(file)
+        data.update(entry)
+        file.seek(0)
+        json.dump(data, file, indent=4)
+
