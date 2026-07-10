@@ -22,8 +22,19 @@ This endpoint requires a paid HIBP API key (unlike the free k-anonymity password
 
 Set it before running:
 
+**Linux / macOS:**
 ```
 export API=your_api_key_here
+```
+
+**Windows (PowerShell):**
+```
+$env:API = "your_api_key_here"
+```
+
+**Windows (Command Prompt):**
+```
+set API=your_api_key_here
 ```
 
 If the environment variable isn't set, the script prints an error and exits without making a request.
@@ -43,7 +54,7 @@ If the environment variable isn't set, the script prints an error and exits with
 ## Running it
 
 ```
-python hibp_email_checker.py
+python email_breach_checker.py
 ```
 
 ## Requirements
