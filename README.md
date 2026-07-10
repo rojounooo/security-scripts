@@ -9,7 +9,6 @@ This repo is a working toolbox rather than a single project, scripts are added h
 - **Passwords** - strength checking and related hygiene tools
 - **Hashing** - file hash generation and verification, useful for integrity checks and automation via cron
 - **OSINT API integrations** - tools that query external threat intel and breach-data services (VirusTotal, Have I Been Pwned) without storing sensitive input locally
-- **SSH** - configuration auditing and hardening against CIS-aligned best practices
 
 More categories will be added as the repo grows.
 
